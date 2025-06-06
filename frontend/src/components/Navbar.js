@@ -83,14 +83,6 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <a
-                  href={admin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-teal-600 hover:text-blue-700 transition-colors"
-              >
-                  A - Pannel
-              </a>
             </div>
 
             <div className="flex items-center space-x-4">
