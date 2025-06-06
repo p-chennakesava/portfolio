@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','kesavastark.onrender.com']
 
 
 # Application definition
@@ -97,15 +97,22 @@ WSGI_APPLICATION = 'KesavaStark.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('DATABASE_NAME'),        # e.g., 'portfolio_db'
+#         'USER': os.environ.get('DATABASE_USER'),        # e.g., 'portfolio_user'
+#         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),# e.g., 'securepassword123'
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DATABASE_NAME'),        # e.g., 'portfolio_db'
-        'USER': os.environ.get('DATABASE_USER'),        # e.g., 'portfolio_user'
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),# e.g., 'securepassword123'
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    # postgres://user:password@localhost:5432/db_name - update this in .env for local development
 }
 
 
