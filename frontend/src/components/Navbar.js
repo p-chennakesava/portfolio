@@ -32,7 +32,8 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
   
-  const admin = 'https://kesavastark.onrender.com/admin' /* Change to http://127.0.0.1:8000/admin/ for local development */
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+  const admin = `${API_BASE_URL}/admin/`; 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Education', path: '/education' },
