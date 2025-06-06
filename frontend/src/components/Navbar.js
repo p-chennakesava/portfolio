@@ -32,7 +32,7 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
   
-  const admin = 'https://kesavastark.onrender.com/admin' /* Change to http://127.0.0.1:8000/admin/ for local development */
+  // const admin = 'https://kesavastark.onrender.com/admin' Change to http://127.0.0.1:8000/admin/ for local development 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Education', path: '/education' },
@@ -40,6 +40,7 @@ const Navbar = () => {
     { name: 'Projects', path: '/projects' },
     { name: 'Experience', path: '/experience' },
     { name: 'Contact', path: '/contact' },
+    { name: 'A - Pannel', path: '/admin' },
     
   ];
 
