@@ -32,7 +32,7 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
   
-  // const admin = 'https://kesavastark.onrender.com/admin' Change to http://127.0.0.1:8000/admin/ for local development 
+  const admin = 'https://kesavastark.onrender.com/admin' /* Change to http://127.0.0.1:8000/admin/ for local development */
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Education', path: '/education' },
@@ -40,7 +40,6 @@ const Navbar = () => {
     { name: 'Projects', path: '/projects' },
     { name: 'Experience', path: '/experience' },
     { name: 'Contact', path: '/contact' },
-    { name: 'A - Pannel', path: '/admin' },
     
   ];
 
@@ -83,6 +82,14 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+              <a
+                  href={admin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-600 hover:text-blue-700 transition-colors"
+              >
+                  A - Pannel
+              </a>
             </div>
 
             <div className="flex items-center space-x-4">
