@@ -14,18 +14,6 @@ from .serializers import (
 import os
 from django.contrib.auth.models import User
 
-def create_admin_user():
-    username = os.environ.get('DJANGO_ADMIN')
-    password = os.environ.get('DJANGO_ADMIN_PASSWORD')
-    email = 'admin@gmail.com'
-
-    if not User.objects.filter(username=username).exists():
-        admin = User.objects.create_superuser(username=username, email=email, password=password)
-        admin.is_staff = True
-        admin.is_superuser = True
-        admin.is_active = True
-        admin.save()
-
 class ProfileListView(generics.ListAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
