@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'backend', # This is For APIs
-
-    'backend.apps.BackendConfig',
 ]
 
 MIDDLEWARE = [
