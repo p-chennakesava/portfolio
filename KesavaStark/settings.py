@@ -111,8 +111,11 @@ WSGI_APPLICATION = 'KesavaStark.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-    # postgres://user:password@localhost:5432/db_name - update this in .env for local development
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 
@@ -166,30 +169,30 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-IS_PRODUCTION = os.environ.get('DJANGO_ENV') == 'production'
+# IS_PRODUCTION = os.environ.get('DJANGO_ENV') == 'production'
 
-if IS_PRODUCTION:
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
+# if IS_PRODUCTION:
+#     SECURE_SSL_REDIRECT = True
+#     SESSION_COOKIE_SECURE = True
+#     CSRF_COOKIE_SECURE = True
 
-    SECURE_HSTS_SECONDS = 31536000  # 1 year
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
+#     SECURE_HSTS_SECONDS = 31536000  # 1 year
+#     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#     SECURE_HSTS_PRELOAD = True
 
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    X_FRAME_OPTIONS = 'DENY'
-else:
-    SECURE_SSL_REDIRECT = False
-    SESSION_COOKIE_SECURE = False
-    CSRF_COOKIE_SECURE = False
+#     SECURE_CONTENT_TYPE_NOSNIFF = True
+#     X_FRAME_OPTIONS = 'DENY'
+# else:
+#     SECURE_SSL_REDIRECT = False
+#     SESSION_COOKIE_SECURE = False
+#     CSRF_COOKIE_SECURE = False
 
-    SECURE_HSTS_SECONDS = 0
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-    SECURE_HSTS_PRELOAD = False
+#     SECURE_HSTS_SECONDS = 0
+#     SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+#     SECURE_HSTS_PRELOAD = False
 
-    SECURE_CONTENT_TYPE_NOSNIFF = False
-    X_FRAME_OPTIONS = 'SAMEORIGIN'  # more relaxed for dev
+#     SECURE_CONTENT_TYPE_NOSNIFF = False
+#     X_FRAME_OPTIONS = 'SAMEORIGIN'  # more relaxed for dev
 
 
 CSRF_COOKIE_HTTPONLY = False  # default is False; must be false to access via JS
