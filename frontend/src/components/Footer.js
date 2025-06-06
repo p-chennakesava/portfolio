@@ -1,6 +1,7 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { useApi } from '../context/ApiContext';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { profile } = useApi();
@@ -33,48 +34,49 @@ const Footer = () => {
             <ul className="space-y-6 flex ">
               <ul className="space-y-6 flex ">
                 <li>
-                  <a href="/" className="space-y-5 text-blue-100 hover:text-white transition-colors">
+                  <Link to="/" className="space-y-5 text-blue-100 hover:text-white transition-colors">
                     Home
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="space-y-6 flex ">
                 <li>
-                  <a href="/education" className="space-y-5 text-blue-100 hover:text-white transition-colors">
+                  <Link to="/education" className="space-y-5 text-blue-100 hover:text-white transition-colors">
                     Education
-                  </a>
+                  </Link>
                 </li>
               
                 <li>
-                  <a href="/skills" className="space-y-5 text-blue-100 hover:text-white transition-colors">
+                  <Link to="/skills" className="space-y-5 text-blue-100 hover:text-white transition-colors">
                     Skills
-                  </a>
+                  </Link>
                 </li>
                 
               </ul>
             </ul>
+
             <ul className="space-y-6 flex justify-center">  
               <li>
-                <a href="/projects" className="space-y-5 text-blue-100 hover:text-white transition-colors">
+                <Link to="/projects" className="space-y-5 text-blue-100 hover:text-white transition-colors">
                   Projects
-                </a>
+                </Link>
               </li>
               <ul className="space-y-6 flex">
                 <li>
-                  <a href="/experience" className="space-y-5 text-blue-100 hover:text-white transition-colors">
+                  <Link to="/experience" className="space-y-5 text-blue-100 hover:text-white transition-colors">
                     Experience
-                  </a>
+                  </Link>
                 </li>
                 <ul className="space-y-6 flex">
                   <li>
-                    <a href="/contact" className="space-y-5 text-blue-100 hover:text-white transition-colors">
+                    <Link to="/contact" className="space-y-5 text-blue-100 hover:text-white transition-colors">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
-              </ul>
-              
+              </ul> 
             </ul>
+
           </div>
 
           <div className=''>
