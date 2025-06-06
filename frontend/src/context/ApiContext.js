@@ -37,7 +37,7 @@ export const ApiProvider = ({ children }) => {
   useEffect(() => {
     const fetchCSRFToken = async () => {
       try {
-        await axios.get(`${API_BASE_URL}profile/`, {
+        await axios.get(`${API_BASE_URL}/api/profile/`, {
           withCredentials: true,
         });
       } catch (err) {
@@ -53,21 +53,21 @@ export const ApiProvider = ({ children }) => {
       try {
         setLoading(true);
 
-        const profileRes = await axios.get(`${API_BASE_URL}profile/`, { withCredentials: true });
+        const profileRes = await axios.get(`${API_BASE_URL}/api/profile/`, { withCredentials: true });
         if (profileRes.data.length > 0) {
           setProfile(profileRes.data[0]);
         }
 
-        const educationRes = await axios.get(`${API_BASE_URL}education/`, { withCredentials: true });
+        const educationRes = await axios.get(`${API_BASE_URL}/api/education/`, { withCredentials: true });
         setEducation(educationRes.data);
 
-        const skillsRes = await axios.get(`${API_BASE_URL}skills/`, { withCredentials: true });
+        const skillsRes = await axios.get(`${API_BASE_URL}/api/skills/`, { withCredentials: true });
         setSkills(skillsRes.data);
 
-        const projectsRes = await axios.get(`${API_BASE_URL}projects/`, { withCredentials: true });
+        const projectsRes = await axios.get(`${API_BASE_URL}/api/projects/`, { withCredentials: true });
         setProjects(projectsRes.data);
 
-        const experienceRes = await axios.get(`${API_BASE_URL}experience/`, { withCredentials: true });
+        const experienceRes = await axios.get(`${API_BASE_URL}/api/experience/`, { withCredentials: true });
         setExperience(experienceRes.data);
 
         setLoading(false);
@@ -84,7 +84,7 @@ export const ApiProvider = ({ children }) => {
   const submitContact = async (data) => {
     try {
       const csrfToken = getCookie('csrftoken');
-      await axios.post(`${API_BASE_URL}contact/`, data, {
+      await axios.post(`${API_BASE_URL}/api/contact/`, data, {
       headers: {
         'X-CSRFToken': csrfToken,
       },
