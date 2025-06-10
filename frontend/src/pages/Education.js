@@ -32,8 +32,8 @@ const Education = () => {
   const sortedEducation = [...education].sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
 
   return (
-    <div className="pt-20 pb-16">
-      <div className="container mx-auto px-4 md:px-6">
+    <div className="pt-20 pb-16 bg-[#d4d7c4]">
+      <div className="container mx-auto px-4 md:px-6 bg-[#d4d7c4]">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Education</h1>

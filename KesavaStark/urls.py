@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/', include('backend.urls')),
     path('', include('frontend.urls')),
 
-    re_path(r'^(?!admin|api|media).*$', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^(?!admin|api|media).*$', include('frontend.urls')),
 ]
 
 if settings.DEBUG:
