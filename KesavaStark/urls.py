@@ -24,8 +24,8 @@ import os
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('backend.urls')),
-    path('', include('frontend.urls')),  # Optional, if you have views inside 'frontend'
-    
+    # path('', include('frontend.urls')),  # Optional, if you have views inside 'frontend'
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Serve React index.html for all unmatched routes
