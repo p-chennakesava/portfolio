@@ -25,13 +25,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('backend.urls')),
     path('', include('frontend.urls')),  # Optional, if you have views inside 'frontend'
-]
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Serve React index.html for all unmatched routes
 urlpatterns += [
     re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
-
-# Serve media files in development
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
