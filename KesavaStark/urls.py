@@ -27,11 +27,3 @@ urlpatterns = [
     path('', include('frontend.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# ✅ Serve media files (must be above the catch-all!)
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# ✅ Catch-all route for React frontend (must be last!)
-# urlpatterns += [
-#     re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
-# ]
