@@ -61,11 +61,11 @@ const Education = () => {
 
               {/* Education Card */}
               <div
-                className={`md:w-1/2 px-4 bg-[#f2f2e9] ${
+                className={`md:w-1/2 px-4  ${
                 index % 2 === 0 ? 'md:mr-auto text-right' : 'md:ml-auto text-right'
                 }`}
               >
-                <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="bg-[#f2f2e9] p-6 rounded-lg shadow-md">
                   <div className="flex items-center mb-3">
                     <GraduationCap className="text-blue-700 mr-2" size={20} />
                     <h3 className="text-xl font-bold text-[#000080]">{edu.degree}</h3>
