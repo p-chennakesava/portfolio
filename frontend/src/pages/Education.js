@@ -32,7 +32,7 @@ const Education = () => {
   const sortedEducation = [...education].sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
 
   return (
-    <div className="pt-20 pb-16 bg-[#d4d7c4]">
+    <div className="pt-20 pb-16">
       <div className="container mx-auto px-4 md:px-6 bg-[#d4d7c4]">
         {/* Header */}
         <div className="text-center mb-16">
@@ -61,14 +61,14 @@ const Education = () => {
 
               {/* Education Card */}
               <div
-                className={`md:w-1/2 px-4 ${
+                className={`md:w-1/2 px-4 bg-[#f2f2e9] ${
                 index % 2 === 0 ? 'md:mr-auto text-right' : 'md:ml-auto text-right'
                 }`}
               >
                 <div className="bg-white p-6 rounded-lg shadow-md">
                   <div className="flex items-center mb-3">
                     <GraduationCap className="text-blue-700 mr-2" size={20} />
-                    <h3 className="text-xl font-bold text-gray-800">{edu.degree}</h3>
+                    <h3 className="text-xl font-bold text-[#000080]">{edu.degree}</h3>
                   </div>
 
                   <h4 className="text-base font-semibold text-blue-700 mb-2">
