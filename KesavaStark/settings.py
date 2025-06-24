@@ -169,7 +169,7 @@ CLOUDINARY_STORAGE = {
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Media files
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # IS_PRODUCTION = os.environ.get('DJANGO_ENV') == 'production'
