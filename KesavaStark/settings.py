@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,21 +87,6 @@ REST_FRAMEWORK = {
 
 WSGI_APPLICATION = 'KesavaStark.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('DATABASE_NAME'),        # e.g., 'portfolio_db'
-#         'USER': os.environ.get('DATABASE_USER'),        # e.g., 'portfolio_user'
-#         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),# e.g., 'securepassword123'
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
 import dj_database_url
 
 DATABASES = {
@@ -171,31 +155,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Media files
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# IS_PRODUCTION = os.environ.get('DJANGO_ENV') == 'production'
-
-# if IS_PRODUCTION:
-#     SECURE_SSL_REDIRECT = True
-#     SESSION_COOKIE_SECURE = True
-#     CSRF_COOKIE_SECURE = True
-
-#     SECURE_HSTS_SECONDS = 31536000  # 1 year
-#     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-#     SECURE_HSTS_PRELOAD = True
-
-#     SECURE_CONTENT_TYPE_NOSNIFF = True
-#     X_FRAME_OPTIONS = 'DENY'
-# else:
-#     SECURE_SSL_REDIRECT = False
-#     SESSION_COOKIE_SECURE = False
-#     CSRF_COOKIE_SECURE = False
-
-#     SECURE_HSTS_SECONDS = 0
-#     SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-#     SECURE_HSTS_PRELOAD = False
-
-#     SECURE_CONTENT_TYPE_NOSNIFF = False
-#     X_FRAME_OPTIONS = 'SAMEORIGIN'  # more relaxed for dev
 
 
 CSRF_COOKIE_HTTPONLY = False  # default is False; must be false to access via JS
