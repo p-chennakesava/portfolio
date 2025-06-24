@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG')
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1','kesavastark.onrender.com']
 
@@ -151,6 +151,11 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+print("\n🔍 Cloudinary DEBUG:")
+print("DEFAULT_FILE_STORAGE =", DEFAULT_FILE_STORAGE)
+print("CLOUD_NAME =", os.environ.get('CLOUD_NAME'))
+print("API_KEY =", os.environ.get('CLOUD_API_KEY'))
+print("API_SECRET =", os.environ.get('CLOUD_API_SECRET'))
 
 # Media files
 MEDIA_URL = '/media/'
