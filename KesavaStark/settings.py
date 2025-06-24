@@ -156,7 +156,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ALLOW_ALL = True
 
 # Media files
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
