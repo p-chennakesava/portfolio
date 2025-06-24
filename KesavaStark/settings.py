@@ -145,9 +145,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'build', 'static')]
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dexlsv57w'  , #os.environ.get('CLOUD_NAME'),
-    'API_KEY': '753115865588637', #os.environ.get('CLOUD_API_KEY'),
-    'API_SECRET': 'd8-53VFYmzxMCzQxZurM1bimS2Q' #os.environ.get('CLOUD_API_SECRET')
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUD_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUD_API_SECRET'),
+    'RESOURCE_TYPE': 'auto' # For PDFs, Videos, etcc..
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
