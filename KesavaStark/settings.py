@@ -43,7 +43,17 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'backend', # This is For APIs
+    # to store images in deployement for render, heroku etc..
+    'cloudinary', 'cloudinary_storage'
 ]
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUD_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUD_API_SECRET')
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
