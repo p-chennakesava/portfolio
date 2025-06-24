@@ -11,7 +11,7 @@ class Profile(models.Model):
     location = models.CharField(max_length=100, blank=True)
     photo = models.ImageField(upload_to='profile/', storage=MediaCloudinaryStorage(), blank=True)
     logo = models.ImageField(upload_to='profile/', storage=MediaCloudinaryStorage(), blank=True, null=True)
-    resume = models.FileField(upload_to='profile/', storage=MediaCloudinaryStorage(), blank=True)
+    resume = models.FileField(upload_to='resume/', storage=MediaCloudinaryStorage(), blank=True)
     github = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
