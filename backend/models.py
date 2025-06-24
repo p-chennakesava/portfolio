@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 class Profile(models.Model):
     name = models.CharField(max_length=100)
@@ -8,9 +9,9 @@ class Profile(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20, blank=True)
     location = models.CharField(max_length=100, blank=True)
-    photo = models.ImageField(upload_to='profile/', blank=True)
-    logo = models.ImageField(upload_to='profile/', blank=True, null=True)
-    resume = models.FileField(upload_to='resume/', blank=True)
+    photo = models.ImageField(upload_to='profile/', storage=MediaCloudinaryStorage(), blank=True)
+    logo = models.ImageField(upload_to='profile/', storage=MediaCloudinaryStorage(), blank=True, null=True)
+    resume = models.FileField(upload_to='profile/', storage=MediaCloudinaryStorage(), blank=True)
     github = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
@@ -62,7 +63,7 @@ class Project(models.Model):
     description = models.TextField()
     category = models.CharField(max_length=100)
     technologies = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='projects/')
+    image = models.ImageField(upload_to='projects/', storage=MediaCloudinaryStorage(), blank=True, null=True)
     github_url = models.URLField(blank=True)
     live_url = models.URLField(blank=True)
     completion_date = models.CharField(max_length=100 ,blank=True, null=True)
